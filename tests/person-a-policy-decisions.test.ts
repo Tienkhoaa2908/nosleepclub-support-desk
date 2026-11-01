@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import official from "../mlai26_new/data/verify/verify_cases.json";
-import development from "../mlai26_new/data/ground-truth/synthetic_tickets.json";
+import official from "../challenge/mlai-2026/data/verify/verify_cases.json";
+import development from "../challenge/mlai-2026/data/ground-truth/synthetic_tickets.json";
 import type { Environment, ServiceGroup, SupportInput } from "@/domain/contracts";
 import { evaluatePolicy, type PolicyEvidence } from "@/domain/policy";
 import { approvalPolicy, resourceQuotaPolicy, singleRequestPolicy } from "@/domain/policy-source";

@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import roster from "../data/demo-identities.json";
+import roster from "../data/demo/identities.json";
 import { evaluateScope, generateEmployeeId, loginSchema, profileSchema } from "@/domain/identity";
 
 describe("synthetic demo identity roster", () => {

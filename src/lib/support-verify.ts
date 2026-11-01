@@ -1,12 +1,12 @@
-import submission from "../../mlai26_new/data/verify/submission-4.json";
-import judge from "../../mlai26_new/data/verify/judge-15.json";
-import versioned from "../../mlai26_new/data/verify/support-v3.json";
-import official from "../../mlai26_new/data/verify/verify_cases.json";
-import synthetic from "../../mlai26_new/data/ground-truth/synthetic_tickets.json";
-import extended from "../../mlai26_new/data/ground-truth/extended_ticket_cases.json";
-import crossFunction from "../../mlai26_new/data/ground-truth/enterprise_cross_function_cases.json";
+import submission from "../../challenge/mlai-2026/data/verify/submission-4.json";
+import judge from "../../challenge/mlai-2026/data/verify/judge-15.json";
+import versioned from "../../challenge/mlai-2026/data/verify/support-v3.json";
+import official from "../../challenge/mlai-2026/data/verify/verify_cases.json";
+import synthetic from "../../challenge/mlai-2026/data/ground-truth/synthetic_tickets.json";
+import extended from "../../challenge/mlai-2026/data/ground-truth/extended_ticket_cases.json";
+import crossFunction from "../../challenge/mlai-2026/data/ground-truth/enterprise_cross_function_cases.json";
 import { cachePackId, cacheVerificationCases, type CacheCheck } from "@/domain/cache-verification";
-import expansion from "../../data/support-desk-expansion.json";
+import expansion from "../../data/evaluation/support-desk-expansion.json";
 import type { SupportDivision } from "@/domain/support-divisions";
 import {
   pendingReview,

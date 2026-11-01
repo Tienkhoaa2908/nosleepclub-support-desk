@@ -51,7 +51,7 @@ Sentiment là thông tin quan sát, không tự cấp quyền, đặt ưu tiên,
 
 Identity dùng Mongo transaction, unique indexes, session và role server. Cấp ID gắn job/profile có phiên bản và scope cụ thể. Đăng nhập ID-only được giữ để demo nhanh; role `identity-admin` do operator gán, không suy từ tên job hoặc level CSV. Sổ quyền/quota DEMO-SANDBOX không tạo entitlement IAM thật.
 
-Support và identity có collection riêng, có thể cùng database `vng_main`. Support có memory-demo khi được cấu hình rõ; identity không có memory/CSV fallback. Không sửa hoặc di chuyển dữ liệu Production từ workflow phát triển UI.
+Support và identity có collection riêng, có thể dùng cùng database được cấu hình cho ứng dụng. Support có memory-demo khi được cấu hình rõ; identity không có memory/CSV fallback. Không sửa hoặc di chuyển dữ liệu Production từ workflow phát triển UI.
 
 ## Bản đồ code
 

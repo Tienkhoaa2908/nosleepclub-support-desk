@@ -1,4 +1,4 @@
-> Nhật ký quyết định theo phiên bản, gồm quyết định mới v5.14. Các số đo lịch sử chỉ áp dụng cho SHA ghi tại đó. Xem [mục lục](../README.md) và [rà soát sau tích hợp](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/INTEGRATION-AUDIT-2026-10-14.md).
+> Nhật ký quyết định theo phiên bản, gồm quyết định mới v5.14. Các số đo lịch sử chỉ áp dụng cho SHA ghi tại đó. Xem [mục lục](../README.md) và [rà soát sau tích hợp](../evidence/2026/INTEGRATION-AUDIT-2026-10-14.json).
 
 # Quyết định contract Member A — vòng v5.12
 
@@ -284,7 +284,7 @@ thứ tự xử lý không thay thế adjudication của tập dữ liệu.
 
 Regression mới dùng dữ liệu giả lập riêng: thiếu facts thì hỏi, đủ facts nhưng
 quota unavailable thì chuyển owner, vi phạm security vẫn chuyển ngay. Xem
-[báo cáo mismatch v5.15](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/MISMATCH-REVIEW-2026-10-14.md).
+[báo cáo mismatch v5.15](../evidence/2026/MISMATCH-REVIEW-2026-10-14.json).
 
 ## Xác nhận tiếp theo — entitlement, approval và quota demo
 

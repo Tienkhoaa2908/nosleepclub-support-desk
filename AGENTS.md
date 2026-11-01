@@ -1,11 +1,21 @@
-# Repository collaboration
+# Repository guidance
 
-The user's current standing preference is to commit and push completed, checked work directly to GitHub `main`, unless a later request explicitly limits the work to local-only or another branch. Preserve dirty checkouts by integrating in a clean checkout; reconcile newer remote commits and never force-push. Do not create a topic branch by default. This preference does not authorize production-data changes or manual deployment/configuration changes.
+## Project scope
 
-The user removed the mandatory two-owner/two-package workflow. Implement and commit locally when requested; no package split or fixed commit count is required. Record the base, scope, diff and check results. Preserve uncommitted work in other checkouts. An explicit local-only request does not authorize publishing; otherwise use the standing main preference above. Manual deployment and production-data changes still require their own scope. Record AI assistance without inferring human review from Git identity. Older package prompts are historical instructions, not current repository policy.
+This repository contains the NoSleepClub Support Desk implementation for the MLAI Hackathon 2026 “The Escalation Referee” challenge. The application runs from the repository root.
 
-Read README.md, RUNBOOK.md, mlai26_new/PROJECT-MEMORY.md and mlai26_new/AGENTS.md before changes.
+## Engineering principles
 
-On 2026-09-20 the user explicitly authorized merging the complete Support v3 migration, including src, into main. Main now includes the implementation from migration commit 89d62c4. The previous source-free main restriction is superseded. Preserve existing policy/workflow, compatibility APIs, tests and fixtures.
+- Keep application code in TypeScript and preserve clear boundaries between input validation, model assistance, deterministic policy, persistence and UI.
+- Treat model output as proposed structured data or text. The server validates evidence and owns policy, safety and workflow decisions.
+- Preserve challenge policy, Ground Truth and regression fixtures unless a change explicitly updates the associated decision record and evaluation.
+- Use synthetic or anonymized examples. Never commit credentials, connection strings or real user data.
+- Keep existing API contracts and compatibility behavior unless the requested change covers them.
 
-Do not skip tests, change Ground Truth to hide failures, expose secrets, or rewrite provenance/history/timestamps. Record reused UI and AI assistance accurately. Follow the user's latest explicit scope; publishing a Git commit does not itself authorize changing deployment configuration or production data.
+## Before changing the system
+
+Read README.md, RUNBOOK.md, docs/ARCHITECTURE.md, challenge/mlai-2026/PROJECT-MEMORY.md and challenge/mlai-2026/AGENTS.md.
+
+## Verification
+
+For application or data-path changes, run the relevant checks from RUNBOOK.md. Documentation-only changes should at least pass npm run check:docs.

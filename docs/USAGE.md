@@ -70,7 +70,7 @@ Không gian reviewer hỗ trợ hiện là **public demo**, tách khỏi quyền
 
 Đường demo ngắn, không cần tài khoản: **Trang đầu → Dành cho Admin → Đã hiểu → Kiểm thử → Đề A → Chạy toàn bộ test (5)**. Xem 3 routine/2 escalation, mở **Bằng chứng quyết định** và **Mở request / audit → Lịch sử yêu cầu và hướng dẫn**, rồi quay lại Verify để nhập một tình huống mới. Có thể bỏ qua tour; tour không tự chạy thao tác.
 
-[Rà soát mới](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/REPO-AUDIT-2026-10-14.md) · [Readiness kỹ thuật](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/archive/TECHNICAL-READINESS.md) · [Đánh giá trước đó](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/archive/COMPETITION-READINESS.md) · [Protocol held-out/người dùng](INDEPENDENT-EVALUATION-PROTOCOL.md) · [Nội dung 5 slide, video và checklist](SUBMISSION-CONTENT.md). Các bằng chứng độc lập/người dùng còn thiếu được ghi `NOT COLLECTED`; không suy ra 9,5/10 từ số test đạt.
+[Rà soát ngày 14/10](evidence/2026/REPO-AUDIT-2026-10-14.json) · [Readiness kỹ thuật](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/archive/TECHNICAL-READINESS.md) · [Đánh giá trước đó](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/archive/COMPETITION-READINESS.md) · [Protocol held-out/người dùng](INDEPENDENT-EVALUATION-PROTOCOL.md) · [Nội dung 5 slide, video và checklist](SUBMISSION-CONTENT.md). Các bằng chứng độc lập/người dùng còn thiếu được ghi `NOT COLLECTED`; không suy ra 9,5/10 từ số test đạt.
 
 1. Mở **Kiểm thử / Verify**, chọn bộ và bấm **Chạy toàn bộ test** một lần.
 2. Thanh tiến trình cam hiển thị số ca đã có kết quả, tính cả PASS và FAIL; không phải dự đoán thời gian. Khi khởi tạo hoặc đọc lại kết quả, thanh chuyển sang đang chờ. Xem expected/actual, rule, thời điểm và liên kết hồ sơ; mở audit để đối chiếu quyết định. Có thể dừng, xem lại và tiếp tục lượt chạy đã lưu, kể cả sau lỗi kết nối.
@@ -82,7 +82,7 @@ Không gian reviewer hỗ trợ hiện là **public demo**, tách khỏi quyền
 | Đề A `de-a-v3` | 5 | Ba case thường quy và hai case cần chuyển tiếp. |
 | `judge-15` | 15 | Thiếu dữ kiện, ngoài quy định, vượt thẩm quyền, xung đột và prompt injection. |
 
-Verify tạo request qua API và đọc lại hồ sơ, audit, queue, metrics trước khi đánh dấu PASS. Đây là kiểm tra có ghi dữ liệu; provider OpenAI được cấu hình có thể phát sinh API call. Kết quả mock chỉ chứng minh luồng mô phỏng. Xem [hướng dẫn giám khảo](JUDGE-ONBOARDING.md), [các bộ dữ liệu](JUDGE-DATASETS.md) và [brief cuộc thi](../Challenge_Brief_OrganizationAI_VN.docx.md).
+Verify tạo request qua API và đọc lại hồ sơ, audit, queue, metrics trước khi đánh dấu PASS. Đây là kiểm tra có ghi dữ liệu; provider OpenAI được cấu hình có thể phát sinh API call. Kết quả mock chỉ chứng minh luồng mô phỏng. Xem [hướng dẫn giám khảo](JUDGE-ONBOARDING.md), [các bộ dữ liệu](JUDGE-DATASETS.md) và [brief cuộc thi](../challenge/mlai-2026/CHALLENGE-BRIEF.md).
 
 ## Xử lý nhiều yêu cầu giống nhau
 

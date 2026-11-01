@@ -1,5 +1,5 @@
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
-import expansion from "../data/support-desk-expansion.json";
+import expansion from "../data/evaluation/support-desk-expansion.json";
 import { prepareInput, submitSupport, completeAnalysis } from "@/services/support";
 import { companyServices, companyServiceGroups, classifyCompanySupport } from "@/domain/company-support";
 import { divisionForGroup, requestDivision, supportDivisions } from "@/domain/support-divisions";

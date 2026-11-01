@@ -24,7 +24,7 @@ biến đổi, đánh giá AI và công bố; không tự đổi provenance đ�
 
 ## Contract dữ liệu và phép đo
 
-- File: `data/sentiment/helpdesk-affect-v1.json`, phiên bản 1.0.0, split
+- File: `data/evaluation/sentiment/helpdesk-affect-v1.json`, phiên bản 1.0.0, split
   development. ID ổn định, text, label/ambiguous, evidence nguyên văn từ text,
   rationale, confidence, adjudicator=null. Provenance ở cấp dataset áp dụng
   mọi case: original-synthetic, no-third-party-content, AI-assisted draft.

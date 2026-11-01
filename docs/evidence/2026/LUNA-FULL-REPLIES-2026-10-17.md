@@ -67,9 +67,9 @@ Ví dụ tin nhắn thật từ API:
 
 Kiểm tra chất lượng bằng assertion (đủ/đúng thứ tự nội dung, nguồn, quyền, không đổi hồ sơ trước xác nhận, gửi đúng nội dung) và đọc toàn bộ response: cả ba đúng vấn đề, không bịa đã sửa, có bước tiếp theo. Đây là kiểm chứng kỹ thuật bởi agent, không phải đánh giá độc lập của chuyên gia/người dùng.
 
-![Ba gợi ý đầy đủ từ Luna trên Production; hồ sơ giả lập](images/luna-full-replies-desktop.png)
+![Ba gợi ý đầy đủ từ Luna trên Production; hồ sơ giả lập](../../images/luna-full-replies-desktop.png)
 
-[Tin nhắn đã đến màn hình theo dõi trên mobile](images/luna-reply-sender-mobile.png).
+[Tin nhắn đã đến màn hình theo dõi trên mobile](../../images/luna-reply-sender-mobile.png).
 
 ## Cleanup và lưu bằng chứng
 

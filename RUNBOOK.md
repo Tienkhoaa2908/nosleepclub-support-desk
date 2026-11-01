@@ -1,4 +1,4 @@
-# VNG Support — Hướng dẫn vận hành
+# NoSleepClub Support Desk — Hướng dẫn vận hành
 
 Hướng dẫn thao tác sản phẩm nằm trong [README](README.md). File này dành cho cài đặt, kiểm tra và bảo trì repository.
 
@@ -99,7 +99,7 @@ Harness hiện đọc lại request/audit sau restart app, thực hiện STOP/CA
 app lần nữa và đối chiếu quyết định reviewer/audit nguyên vẹn với Mongo. Chỉ khi
 mọi assertion đạt mới trả `APP_RESTART_VERIFIED`. Không restart mongod, không
 chứng minh identity transaction/replica set hay production durability. Lượt
-kiểm tra này không có Mongo test: xem [bằng chứng hiện tại](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/REPO-AUDIT-2026-10-14.md).
+kiểm tra này không có Mongo test: xem [bằng chứng hiện tại](docs/evidence/2026/REPO-AUDIT-2026-10-14.json).
 
 Ưu tiên harness có guard và tự restart tiến trình tại [hướng dẫn kiểm tra persistence](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/archive/FEEDBACK-EVIDENCE-REVIEW.md#reproducible-mongo-evidence): `node scripts/mongo-restart-smoke.mjs`. Harness chỉ chấp nhận Mongo loopback trên instance disposable được khai báo rõ, database mới do script chọn, không có `.env` local, model mock và budget 0. Chưa có kết quả live từ harness trong lượt sửa này. `durable=true` vẫn là metadata của adapter; trường health `persistenceVerification=NOT_PERFORMED` nói rõ endpoint không kiểm tra restart.
 
@@ -234,12 +234,12 @@ Ngân sách/bảng giá chưa cấu hình nên luôn cần Capacity owner; chưa
 `tests/e2e/authority.spec.ts` dùng mock UI và API local thiếu Mongo. Những test
 này không chứng minh Mongo transaction/index/concurrency/restart thật.
 
-Hệ thống ID dùng collection riêng, có thể chung database `vng_main` với Support. Không có memory/CSV fallback. Khi MongoDB không cấu hình/không khả dụng, API trả 503 và UI không xác nhận thành công. Mọi thao tác dưới đây dành cho operator đã có thẩm quyền; không chạy trên production chỉ vì có quyền push code.
+Hệ thống ID dùng collection riêng, có thể dùng chung database đã cấu hình với Support. Không có memory/CSV fallback. Khi MongoDB không cấu hình/không khả dụng, API trả 503 và UI không xác nhận thành công. Mọi thao tác dưới đây dành cho operator đã có thẩm quyền; không chạy trên production chỉ vì có quyền push code.
 
 ### Cấu hình
 
 - `IDENTITY_MONGODB_URI`: URI riêng; nếu bỏ trống dùng `MONGODB_URI`. Không đưa URI vào Git/log.
-- `IDENTITY_MONGODB_DB=vng_main`: dùng chung database với Support; dữ liệu identity nằm trong các collection `identity_*`.
+- `IDENTITY_MONGODB_DB=nsclub_support_desk`: dùng chung database với Support; dữ liệu identity nằm trong các collection `identity_*`.
 - MongoDB cần replica set/sharded cluster để dùng transaction. User cần đọc/ghi các collection `identity_*`, tạo collection/index và `collMod` để cài validator. Không cần quyền quản trị toàn cluster.
 - Bản demo hiện đăng nhập chỉ bằng ID cho cả người gửi và IT. Không cần OTP relay/signing key. Biến OTP cũ không được đọc; collection challenge và metadata kênh cũ được giữ nguyên, không sử dụng để đăng nhập.
 
@@ -263,12 +263,12 @@ Script từ chối database khác cấu hình, thiếu cờ chấp nhận ID-onl
 
 ### Bộ 40 ID demo
 
-Nguồn dữ liệu giả lập được ghim tại `data/demo-identities.json`: 40 tên và ID duy nhất, mỗi ID có profile/job, scope và đích `demo/<id>` riêng. Các tài khoản này không được cấp role quản lý ID. Công cụ không tự chạy khi app khởi động.
+Nguồn dữ liệu giả lập được ghim tại `data/demo/identities.json`: 40 tên và ID duy nhất, mỗi ID có profile/job, scope và đích `demo/<id>` riêng. Các tài khoản này không được cấp role quản lý ID. Công cụ không tự chạy khi app khởi động.
 
 Kiểm tra manifest mà không kết nối hoặc ghi MongoDB:
 
 ```powershell
-node scripts/identity-demo-roster.mjs --file data/demo-identities.json
+node scripts/identity-demo-roster.mjs --file data/demo/identities.json
 node --test scripts/identity-demo-roster.test.mjs
 npm test -- tests/demo-identity-roster.test.ts
 ```
@@ -276,7 +276,7 @@ npm test -- tests/demo-identity-roster.test.ts
 Sau khi operator xác nhận môi trường demo và database đích, gọi `GET /api/identity/profiles` để cài validator/index nếu chưa có, rồi chạy với URI trong `.env.local`:
 
 ```powershell
-node --env-file=.env.local scripts/identity-demo-roster.mjs --file data/demo-identities.json --database vng_main --actor dakiemdarktharr --demo-id-only --apply
+node --env-file=.env.local scripts/identity-demo-roster.mjs --file data/demo/identities.json --database "$env:IDENTITY_MONGODB_DB" --actor operator-demo --demo-id-only --apply
 ```
 
 `--database` phải trùng `IDENTITY_MONGODB_DB`. Import dùng một Mongo transaction cho account, profile và audit. Nếu một ID/profile đã tồn tại khác manifest, toàn bộ lượt nhập rollback; không ghi đè account cũ. Chạy lại cùng manifest chỉ xác nhận dữ liệu đã có, không tạo trùng hoặc thêm audit cấp tài khoản. Mỗi lượt tạo ghi actor và SHA-256 của manifest.
@@ -285,19 +285,19 @@ Phạm vi trong profile chưa cho phép thực thi thao tác nhạy cảm: Produ
 
 ### Đổi tên và ID bộ demo v1 → v2
 
-Bộ hiện hành là `data/demo-identities.json` (version 2): 24 tên 3 chữ, 12 tên 4 chữ, 4 tên 5 chữ. `data/migrations/demo-identities-v1.json` là snapshot giả lập phục vụ đối chiếu migration, không phải danh sách ID đăng nhập hiện hành. Mỗi account pin profileVersion 2; không sửa scopes của profile version 1 để che lịch sử.
+Bộ hiện hành là `data/demo/identities.json` (version 2): 24 tên 3 chữ, 12 tên 4 chữ, 4 tên 5 chữ. `data/demo/migrations/identities-v1.json` là snapshot giả lập phục vụ đối chiếu migration, không phải danh sách ID đăng nhập hiện hành. Mỗi account pin profileVersion 2; không sửa scopes của profile version 1 để che lịch sử.
 
 Kiểm tra mapping trước, chưa ghi Mongo:
 
 ```powershell
-node scripts/identity-demo-rename.mjs --from data/migrations/demo-identities-v1.json --file data/demo-identities.json
+node scripts/identity-demo-rename.mjs --from data/demo/migrations/identities-v1.json --file data/demo/identities.json
 node --test scripts/identity-demo-roster.test.mjs scripts/identity-demo-rename.test.mjs
 ```
 
 Chỉ operator được phép thay 40 tài khoản giả lập trên database đích mới chạy:
 
 ```powershell
-node --env-file=.env.local scripts/identity-demo-rename.mjs --from data/migrations/demo-identities-v1.json --file data/demo-identities.json --database vng_main --actor dakiemdarktharr --demo-id-only --apply
+node --env-file=.env.local scripts/identity-demo-rename.mjs --from data/demo/migrations/identities-v1.json --file data/demo/identities.json --database "$env:IDENTITY_MONGODB_DB" --actor operator-demo --demo-id-only --apply
 ```
 
 Migration ghép bằng profile UUID cố định, giữ Mongo `_id`, ngày tạo, job, role và policy; cập nhật tên, ID, liên kết batch và phiên đăng nhập. Tạo profile version 2 cho đúng đích mới; giữ scopes cũ ở version 1 và ngừng đưa version cũ vào danh sách chọn. ID cũ không còn đăng nhập được. Phiên đã có tiếp tục đọc ra ID mới; trang đang mở cần tải lại để đồng bộ ID đang hiển thị. Người chưa có tài khoản vẫn dùng `/guest`.
@@ -330,20 +330,20 @@ Dependency audit cần phân biệt runtime và toolchain. Lượt rà soát 15/
 
 ## Bổ sung phòng ban cho 40 ID hiện có
 
-Đọc manifest `data/demo-identities.json`; validate không chạm database:
+Đọc manifest `data/demo/identities.json`; validate không chạm database:
 
 ```sh
-node scripts/identity-demo-roster.mjs --file data/demo-identities.json
+node scripts/identity-demo-roster.mjs --file data/demo/identities.json
 node --test scripts/identity-demo-roster.test.mjs scripts/identity-demo-rename.test.mjs
 ```
 
 Operator chỉ áp dụng trên database identity đã xác nhận, qua terminal có sẵn biến môi trường an toàn; không gửi URI/key vào chat. Dùng đúng database đang cấu hình trong `IDENTITY_MONGODB_DB` (không tự đổi sang database khác). Trong PowerShell:
 
 ```powershell
-node scripts/identity-demo-roster.mjs --file data/demo-identities.json --apply --sync-departments --demo-id-only --database "$env:IDENTITY_MONGODB_DB" --actor operator-demo
+node scripts/identity-demo-roster.mjs --file data/demo/identities.json --apply --sync-departments --demo-id-only --database "$env:IDENTITY_MONGODB_DB" --actor operator-demo
 ```
 
-Lệnh đối chiếu đúng 40 ID, tên, batch, profile version, role và scope trước khi bổ sung phòng ban còn trống. Không đổi ID, role hay scope; gặp phòng ban đã có nhưng khác manifest sẽ rollback cả batch. Chạy lại không tạo audit thừa. Lưu receipt ngoài Git. Chỉ chạy migration trên Production khi chủ repo cho phép. Lượt ngày 17/10/2026 đã đồng bộ 40/40 phòng ban trên vng_main, giữ nguyên quyền; xem README và receipt của lượt đó. Phiên đăng nhập đọc phòng ban từ Mongo, điền vào form và server dùng giá trị đó; người chưa có phòng ban vẫn dùng lựa chọn hiện có.
+Lệnh đối chiếu đúng 40 ID, tên, batch, profile version, role và scope trước khi bổ sung phòng ban còn trống. Không đổi ID, role hay scope; gặp phòng ban đã có nhưng khác manifest sẽ rollback cả batch. Chạy lại không tạo audit thừa. Lưu receipt ngoài Git. Chỉ chạy migration trên Production khi chủ repo cho phép. Lượt ngày 17/10/2026 đã đồng bộ 40/40 phòng ban trên database của môi trường triển khai cũ, giữ nguyên quyền; xem README và receipt của lượt đó. Phiên đăng nhập đọc phòng ban từ Mongo, điền vào form và server dùng giá trị đó; người chưa có phòng ban vẫn dùng lựa chọn hiện có.
 
 ## Vận hành cache và sự cố chung
 

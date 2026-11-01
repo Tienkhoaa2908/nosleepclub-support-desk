@@ -2,9 +2,9 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 
 const read = path => JSON.parse(readFileSync(path, "utf8"));
-const datasetPath = "mlai26_new/data/verify/enterprise-128-v1.json";
+const datasetPath = "challenge/mlai-2026/data/verify/enterprise-128-v1.json";
 const dataset = read(datasetPath);
-const manifest = read("mlai26_new/data/verify/enterprise-128-v1.manifest.json");
+const manifest = read("challenge/mlai-2026/data/verify/enterprise-128-v1.manifest.json");
 const report = read("artifacts/enterprise-128-results.json");
 const digest = createHash("sha256").update(readFileSync(datasetPath)).digest("hex");
 if (digest !== manifest.sha256 || digest !== report.provenance.datasetSha256 || report.total !== 128)

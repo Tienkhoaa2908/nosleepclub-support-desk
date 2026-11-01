@@ -5,8 +5,8 @@ import { prepareInput, submitSupport } from "@/services/support";
 import { getSupportRequest, resetSupportTestStore } from "@/lib/support-repository";
 import { POST } from "@/app/api/support/requests/route";
 import { verifyApproval } from "@/services/approvals";
-import extended from "../mlai26_new/data/ground-truth/extended_ticket_cases.json";
-import crossFunction from "../mlai26_new/data/ground-truth/enterprise_cross_function_cases.json";
+import extended from "../challenge/mlai-2026/data/ground-truth/extended_ticket_cases.json";
+import crossFunction from "../challenge/mlai-2026/data/ground-truth/enterprise_cross_function_cases.json";
 
 // Independent synthetic regressions, not original competition Ground Truth.
 beforeEach(() => {

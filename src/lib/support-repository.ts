@@ -36,7 +36,7 @@ export function supportDatabase() {
       connectTimeoutMS: 8000,
     });
     return runtime.supportV3Mongo.db(
-      process.env.MONGODB_DB || "mlai26_support_v3_demo",
+      process.env.MONGODB_DB || "nsclub_support_desk",
     );
   }
   if (

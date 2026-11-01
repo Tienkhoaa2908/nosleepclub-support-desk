@@ -24,7 +24,7 @@ Số yêu cầu là số case thuộc lần chạy đã lưu, gồm câu gốc v
 | Máy in offline | 7 | 1 MISS, 6 HIT |
 | Đối chứng khác ý hoặc cần ngữ cảnh riêng | 14 | 14 BYPASS |
 
-Câu có dấu/không dấu, lời nhờ hỗ trợ, đảo vị trí vấn đề, từ đồng nghĩa và lời phàn nàn nhẹ. Ví dụ “VPN của em cứ rớt kết nối hoài…” và “Kết nối chập chờn quá, VPN của mình…” cùng nhóm ngắt kết nối; chúng không dùng chung nhóm VPN chưa kết nối. Dữ liệu nằm trong [cache-system.json](../data/cache-system.json).
+Câu có dấu/không dấu, lời nhờ hỗ trợ, đảo vị trí vấn đề, từ đồng nghĩa và lời phàn nàn nhẹ. Ví dụ “VPN của em cứ rớt kết nối hoài…” và “Kết nối chập chờn quá, VPN của mình…” cùng nhóm ngắt kết nối; chúng không dùng chung nhóm VPN chưa kết nối. Dữ liệu nằm trong [cache-system.json](../data/evaluation/cache-system.json).
 
 ## Hợp đồng nhận diện và cache
 

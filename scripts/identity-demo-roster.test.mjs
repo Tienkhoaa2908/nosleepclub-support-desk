@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validateRoster, importDemoRoster } from './identity-demo-roster.mjs';
-const input = () => JSON.parse(readFileSync(new URL('../data/demo-identities.json', import.meta.url), 'utf8'));
+const input = () => JSON.parse(readFileSync(new URL('../data/demo/identities.json', import.meta.url), 'utf8'));
 test('validates exactly 40 explicitly synthetic demo accounts', () => assert.equal(validateRoster(input()).accounts.length, 40));
 for (const [name, mutate] of [
   ['real-person label', r => { r.synthetic = false; }],

@@ -2,8 +2,8 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validateRename } from './identity-demo-rename.mjs';
-const previous = () => JSON.parse(readFileSync(new URL('../data/migrations/demo-identities-v1.json', import.meta.url), 'utf8'));
-const current = () => JSON.parse(readFileSync(new URL('../data/demo-identities.json', import.meta.url), 'utf8'));
+const previous = () => JSON.parse(readFileSync(new URL('../data/demo/migrations/identities-v1.json', import.meta.url), 'utf8'));
+const current = () => JSON.parse(readFileSync(new URL('../data/demo/identities.json', import.meta.url), 'utf8'));
 test('maps all 40 accounts by stable profile ID, never array position', () => {
   const next = current(); next.accounts.reverse();
   const pairs = validateRename(previous(), next);

@@ -40,7 +40,7 @@ Lỗi được sửa trong `answer-cache.ts`: trước đây generator trả gi�
 
 ## Bộ 15 tình huống
 
-Đối chiếu cả 15 case trong `mlai26_new/data/verify/judge-15.json` với policy hiện hành: các kỳ vọng action/bucket/rule vẫn phù hợp, nên giữ nguyên file và nhãn. Không thay Ground Truth để tăng tỷ lệ đạt. Bộ hiện tại bao phủ hướng dẫn thiết bị/mạng, song ngữ, reset mơ hồ, thiếu phạm vi database, production admin, public RDP, xung đột field/text, handoff, wipe, bypass MFA, prompt injection và tác vụ ngoài danh mục.
+Đối chiếu cả 15 case trong `challenge/mlai-2026/data/verify/judge-15.json` với policy hiện hành: các kỳ vọng action/bucket/rule vẫn phù hợp, nên giữ nguyên file và nhãn. Không thay Ground Truth để tăng tỷ lệ đạt. Bộ hiện tại bao phủ hướng dẫn thiết bị/mạng, song ngữ, reset mơ hồ, thiếu phạm vi database, production admin, public RDP, xung đột field/text, handoff, wipe, bypass MFA, prompt injection và tác vụ ngoài danh mục.
 
 Verify nay kiểm tra thêm chất lượng phản hồi của bộ 15: hướng dẫn có bước thực hiện, cách kiểm tra kết quả và cảnh báo; nhánh thiếu dữ kiện có câu hỏi và trường còn thiếu; nhánh escalation không được approved/completed. Màn hình hiển thị từng check. `tests/support-verify.test.ts` chạy cả 15 qua cùng API và đọc lại detail/audit/queue/metrics. `tests/judge-packs.test.ts` kiểm tra contract nghiệp vụ và cấu trúc bộ. Đây là regression synthetic, không phải benchmark AI độc lập.
 

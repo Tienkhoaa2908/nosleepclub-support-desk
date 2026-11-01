@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import roster from "../data/demo-identities.json";
+import roster from "../data/demo/identities.json";
 import { fieldOptions } from "@/domain/catalog";
 import { optionName } from "@/domain/presentation";
 import { guestDepartments } from "@/domain/guest-session";

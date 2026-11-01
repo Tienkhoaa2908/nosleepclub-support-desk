@@ -29,9 +29,9 @@ Tóm tắt là công cụ đọc nhanh, không đi vào policy/routing/approval 
 
 Cache ở Mongo `v3_support_reviewer_summaries`, riêng từng request + nội dung + prompt version + provider/model, TTL 24 giờ. Cache hit sau reload đã xác minh thật trên cả 3 hồ sơ; không gọi đây là chứng minh persistence sau restart. Single-flight chỉ trong một process; các instance đồng thời vẫn có thể gọi trùng trước lần ghi đầu.
 
-![Hai phần nguyên văn và tóm tắt trên Production, dữ liệu giả lập](images/review-summary-desktop.png)
+![Hai phần nguyên văn và tóm tắt trên Production, dữ liệu giả lập](../../images/review-summary-desktop.png)
 
-[Ảnh mobile](images/review-summary-mobile.png).
+[Ảnh mobile](../../images/review-summary-mobile.png).
 
 ## Kết quả Production mới nhất
 

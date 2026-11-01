@@ -105,7 +105,7 @@ it("original fixtures and policy sources match their pre-migration hashes", () =
     ),
   ) as Array<{ path: string; sha256: string }>;
   const originals = manifest.filter((item) =>
-    item.path.startsWith("mlai26_new/data/"),
+    item.path.startsWith("challenge/mlai-2026/data/"),
   );
   expect(originals.length).toBeGreaterThan(5);
   for (const item of originals)

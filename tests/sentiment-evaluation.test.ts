@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { expect, it } from "vitest";
-import rawDataset from "../data/sentiment/helpdesk-affect-v1.json";
+import rawDataset from "../data/evaluation/sentiment/helpdesk-affect-v1.json";
 import { evaluateSentiment, sentimentDatasetSchema } from "@/evaluation/sentiment";
 import { supportRequestSentimentFallback } from "@/lib/feedback-model";
 import { redact } from "@/domain/redaction";

@@ -4,7 +4,7 @@ Bổ sung theo yêu cầu cập nhật 128 tình huống và chạy lại. Khôn
 
 ## Contract và provenance
 
-- [Dataset 128 ca](../mlai26_new/data/verify/enterprise-128-v1.json) và [manifest đóng băng](../mlai26_new/data/verify/enterprise-128-v1.manifest.json).
+- [Dataset 128 ca](../challenge/mlai-2026/data/verify/enterprise-128-v1.json) và [manifest đóng băng](../challenge/mlai-2026/data/verify/enterprise-128-v1.manifest.json).
 - 8 nhóm × 16 ca; 34 expected AUTO, 20 NEEDS_INFORMATION, 74 ESCALATE. Có 8 fault simulations. Câu mới không trùng nguyên văn các fixture cũ sau chuẩn hóa NFKC/chữ thường/khoảng trắng; các paraphrase cùng họ không được coi độc lập thống kê.
 - Source ứng dụng: `066cf89e0190aa0d0d0e38e613c52dbc63a5df56`, policy `support-guidance-v5.20`, Node v24.18.0. Source `src/` không thay đổi trong lượt đánh giá.
 - Dataset SHA-256: `4f824e412e7e494d164b26de9fd1a505219911278277a0f6815c508a07b9a304`. Nhãn được chốt/hash trước lượt chạy thực tế đầu tiên. Giữ nguyên sau khi thấy lỗi; adjudication sau này phải có version mới và lý do.

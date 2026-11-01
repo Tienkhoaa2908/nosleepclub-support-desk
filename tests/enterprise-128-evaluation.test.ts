@@ -3,8 +3,8 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { z } from "zod";
-import candidate from "../mlai26_new/data/verify/enterprise-128-v1.json";
-import manifest from "../mlai26_new/data/verify/enterprise-128-v1.manifest.json";
+import candidate from "../challenge/mlai-2026/data/verify/enterprise-128-v1.json";
+import manifest from "../challenge/mlai-2026/data/verify/enterprise-128-v1.manifest.json";
 import { evaluateBatch, evaluationActions } from "@/domain/evaluation";
 import { POLICY_VERSION } from "@/domain/policy-source";
 import { runSupportCase, supportVerifyCases, type VerifyResult } from "@/lib/support-verify";
@@ -30,7 +30,7 @@ const caseSchema = z.object({
   rationale: z.string().min(20),
 }).strict();
 const cases = z.array(caseSchema).length(128).parse(candidate.cases);
-const datasetPath = "mlai26_new/data/verify/enterprise-128-v1.json";
+const datasetPath = "challenge/mlai-2026/data/verify/enterprise-128-v1.json";
 const sha256 = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
 const normalizeText = (value: string) => value.normalize("NFKC").toLowerCase().replace(/\s+/g, " ").trim();
 const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" }).trim();

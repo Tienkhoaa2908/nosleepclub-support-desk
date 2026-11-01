@@ -1,4 +1,4 @@
-import dataset from "../../data/cache-system.json";
+import dataset from "../../data/evaluation/cache-system.json";
 
 export const cachePackId = "test-cache-system";
 export const cachePackName = dataset.name;

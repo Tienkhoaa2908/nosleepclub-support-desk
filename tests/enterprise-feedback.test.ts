@@ -4,7 +4,7 @@ import { continueConversation } from "@/services/conversation";
 import { feedbackSupport } from "@/services/review";
 import { resetSupportTestStore } from "@/lib/support-repository";
 import { classifyPostAnswerFeedback } from "@/domain/feedback";
-import corpus from "../mlai26_new/data/sentiment/post-answer-feedback.json";
+import corpus from "../challenge/mlai-2026/data/sentiment/post-answer-feedback.json";
 import { parseSupportQuery, supportPage } from "@/lib/support-query";
 import * as repository from "@/lib/support-repository";
 

@@ -56,7 +56,7 @@ Không gắn nhãn SLA cho độ trễ của model, retrieval, cache hay API. Đ
 ## Trước khi thay đổi code
 
 1. Kiểm tra trạng thái Git và thay đổi có sẵn. Giữ nguyên công việc chưa commit trong checkout.
-2. Đọc các hướng dẫn bắt buộc của repository: `DOCRELAY_MLAI2026/AGENTS.md`, `README.md`, `RUNBOOK.md`, `mlai26_new/PROJECT-MEMORY.md` và `mlai26_new/AGENTS.md`.
+2. Đọc các hướng dẫn bắt buộc của repository: `DOCRELAY_MLAI2026/AGENTS.md`, `README.md`, `RUNBOOK.md`, `challenge/mlai-2026/PROJECT-MEMORY.md` và `challenge/mlai-2026/AGENTS.md`.
 3. Truy vết luồng hiện hành qua contracts, policy source, intake, conversation/handoff, review, incident grouping, repository, audit, telemetry và màn hình requester/reviewer. Tìm tests, fixtures, migration và các cách đọc/ghi document đã có trước khi chọn kiến trúc.
 4. Đối chiếu mọi mô tả dưới đây với code và tài liệu đang có. Nếu khác, ghi nhận sự khác nhau và dùng hiện trạng trong code làm căn cứ.
 5. Đọc nguồn kỹ thuật chính thức về SLI/SLO/SLA và cơ chế lịch, điều kiện bắt đầu/tạm dừng/kết thúc. Phân biệt nguyên tắc chung với hành vi riêng của một sản phẩm.
@@ -164,5 +164,5 @@ Tiến hành xuyên suốt, không dừng ở một bản kế hoạch:
 - [Architecture](ARCHITECTURE.md) — luồng xử lý, telemetry kỹ thuật, storage và phân quyền hiển thị.
 - [Interaction handoff](INTERACTION-HANDOFF.md) — quy tắc chuyển người và ranh giới với sentiment/priority.
 - [Batch Support contract](BATCH-SUPPORT-CONTRACT.md) — nhóm sự cố, phiên khách, polling và giới hạn demo.
-- [Department validation](DEPARTMENTS-LUNA-PRODUCTION-2026-10-17.md) — danh mục phòng ban demo và giới hạn số liệu quan sát.
+- [Department validation](evidence/2026/DEPARTMENTS-LUNA-PRODUCTION-2026-10-17.md) — danh mục phòng ban demo và giới hạn số liệu quan sát.
 - [Project README](../README.md) — phạm vi demo và cảnh báo policy chưa chính thức.

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import dataset from "../data/cache-system.json";
+import dataset from "../data/evaluation/cache-system.json";
 import { cachePackId, cacheVerificationCases } from "@/domain/cache-verification";
 import { faqTopic } from "@/domain/faq-intent";
 import { runCacheVerificationCase } from "@/services/cache-verification";

@@ -1,4 +1,4 @@
-# Tài liệu VNG Support
+# Tài liệu Support Desk
 
 | Mục đích | Tài liệu |
 | --- | --- |
@@ -10,6 +10,7 @@
 | Hỗ trợ hàng loạt | [Contract](BATCH-SUPPORT-CONTRACT.md), [kiểm chứng](BATCH-SUPPORT-VALIDATION.md) |
 | Trình diễn | [Hướng dẫn giám khảo](JUDGE-ONBOARDING.md), [dataset](JUDGE-DATASETS.md) |
 | Thu thập feedback | [Protocol](INDEPENDENT-EVALUATION-PROTOCOL.md), [nội dung nộp](SUBMISSION-CONTENT.md) |
+| Bằng chứng triển khai theo ngày | [Ảnh chụp và báo cáo 2026](evidence/2026/) |
 | Quyết định còn áp dụng | [Policy](decisions/PERSON-A-POLICY-DECISIONS.md), [contract](decisions/PERSON-A-CONTRACT-DECISIONS.md), [quyền demo](decisions/DEMO-AUTHORITY-CONTRACT.md) |
 
-Báo cáo từng lần triển khai, kế hoạch và prompt bàn giao cũ được giữ trong lịch sử Git. Liên kết cần truy vết trỏ tới commit cụ thể; không dùng số đo lịch sử làm kết quả của bản đang chạy.
+Bằng chứng triển khai và báo cáo theo ngày được lưu trong evidence/2026. Dùng commit và metadata của từng báo cáo để xác định phiên bản được kiểm tra; không dùng số đo lịch sử làm kết quả của bản đang chạy.

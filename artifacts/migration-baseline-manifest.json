@@ -1,61 +1,61 @@
 [
   {
-    "path": "mlai26_new/data/ground-truth/synthetic_tickets.json",
+    "path": "challenge/mlai-2026/data/ground-truth/synthetic_tickets.json",
     "sha256": "67DE788C0F011B2C8BC2816183F80646902F0DCF09B5DF0AB0E99921E7B162F6",
     "bytes": 8580
   },
   {
-    "path": "mlai26_new/data/ground-truth/extended_ticket_cases.json",
+    "path": "challenge/mlai-2026/data/ground-truth/extended_ticket_cases.json",
     "sha256": "71F0CC891D7E35565796C954C4A4FA1A6D2120CA0CFA7A499DF61A63D83B4AAF",
     "bytes": 23691
   },
   {
-    "path": "mlai26_new/data/ground-truth/enterprise_cross_function_cases.json",
+    "path": "challenge/mlai-2026/data/ground-truth/enterprise_cross_function_cases.json",
     "sha256": "8DDC4B78FF2C9F7561EC80896BCB9561A1401DA8A857B90C1CAADE6C0A949418",
     "bytes": 19516
   },
   {
-    "path": "mlai26_new/data/policy/decision-rules.md",
+    "path": "challenge/mlai-2026/data/policy/decision-rules.md",
     "sha256": "1E9C23E181F113CE019F9152AACC4C17FF369E335D257693E833C03AE0B6664A",
     "bytes": 12309
   },
   {
-    "path": "mlai26_new/data/policy/approval-authority-matrix.csv",
+    "path": "challenge/mlai-2026/data/policy/approval-authority-matrix.csv",
     "sha256": "472149016E651CCBEBD7BF5B79C072E678E49DBB2CBC28A77FC2B1B7252991BF",
     "bytes": 3204
   },
   {
-    "path": "mlai26_new/data/policy/POLICY-REVIEW.md",
+    "path": "challenge/mlai-2026/data/policy/POLICY-REVIEW.md",
     "sha256": "F79264E87AED7AD495E14F26EA924AEF5907CCDC9ECAA952D74BBCF4934A9738",
     "bytes": 3442
   },
   {
-    "path": "mlai26_new/data/policy/glossary.md",
+    "path": "challenge/mlai-2026/data/policy/glossary.md",
     "sha256": "1871456514E1AE2BA2C4C7BAE7E1652F595402099028223C4D2E7803CD9A1CC5",
     "bytes": 7982
   },
   {
-    "path": "mlai26_new/data/policy/README.md",
+    "path": "challenge/mlai-2026/data/policy/README.md",
     "sha256": "F1EAAA038609BBC15EF4EFFF960927260B812B7BCC9FFF8EB5FFDFD7C85C6DD0",
     "bytes": 2230
   },
   {
-    "path": "mlai26_new/data/policy/service-catalog.csv",
+    "path": "challenge/mlai-2026/data/policy/service-catalog.csv",
     "sha256": "7837D78ABD55D8913330CAC3F4CAC0AEE1687E1D6ECB3262517BF538B170F90A",
     "bytes": 1212
   },
   {
-    "path": "mlai26_new/data/policy/routing-matrix.csv",
+    "path": "challenge/mlai-2026/data/policy/routing-matrix.csv",
     "sha256": "2802313C4B182000C5CD4E138A6D40077D1E15154C0541A8316F69C89289B189",
     "bytes": 5467
   },
   {
-    "path": "mlai26_new/data/policy/required-fields.md",
+    "path": "challenge/mlai-2026/data/policy/required-fields.md",
     "sha256": "08EEFCA64011AE9B6CA8A840647B509FF5E62B91EC016D9734C0BE3923AEC0DA",
     "bytes": 10930
   },
   {
-    "path": "mlai26_new/data/verify/verify_cases.json",
+    "path": "challenge/mlai-2026/data/verify/verify_cases.json",
     "sha256": "CCF71E3A3F20D53E8F63669C8EB5DAA950F76F814E005ED4922D4262881ECEE7",
     "bytes": 2632
   },

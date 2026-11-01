@@ -1,4 +1,4 @@
-> Nhật ký quyết định theo phiên bản, gồm quyết định mới v5.14. Các số đo lịch sử chỉ áp dụng cho SHA ghi tại đó. Xem [mục lục](../README.md) và [rà soát sau tích hợp](https://github.com/dakiemdarktharr/vng-support/blob/cd50d826003f2e49e8d52b3e695ad6fe74fe15b7/docs/INTEGRATION-AUDIT-2026-10-14.md).
+> Nhật ký quyết định theo phiên bản, gồm quyết định mới v5.14. Các số đo lịch sử chỉ áp dụng cho SHA ghi tại đó. Xem [mục lục](../README.md) và [rà soát sau tích hợp](../evidence/2026/INTEGRATION-AUDIT-2026-10-14.json).
 
 # Quyết định policy cho Member A
 
