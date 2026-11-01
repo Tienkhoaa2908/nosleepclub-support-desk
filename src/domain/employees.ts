@@ -52,7 +52,7 @@ function parseCsvRow(row: string): string[] {
 
 /** Validates legacy synthetic fixtures for controlled seed/import; never used for runtime accounts. */
 export function getEmployees(): Employee[] {
-  const csvPath = path.join(process.cwd(), "data", "employees.csv");
+  const csvPath = path.join(process.cwd(), "data", "demo", "employees.csv");
   const csv = readFileSync(csvPath, "utf8").replace(/^\uFEFF/, "");
   const rows = csv.split(/\r?\n/).filter((row) => row.trim().length > 0);
   const expectedHeaders = ["id", "name", "level", "title", "department"];

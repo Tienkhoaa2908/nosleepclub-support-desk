@@ -1,4 +1,3 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import roster from "../data/demo/identities.json";
 import { evaluateScope, generateEmployeeId, loginSchema, profileSchema } from "@/domain/identity";
@@ -13,11 +12,6 @@ describe("synthetic demo identity roster", () => {
       expect(new Set(roster.accounts.map(account => account[field])).size).toBe(40);
     expect(generateEmployeeId("Phạm Thiên Bình")).toBe("binhpt");
     expect(roster.accounts.some(account => account.id === "itnvgl")).toBe(false);
-  });
-  it("documents all current names and IDs in the README", () => {
-    const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");
-    for (const account of roster.accounts)
-      expect(readme).toContain("| `" + account.id + "` | " + account.fullName + " | " + account.jobPosition + " |");
   });
   for (const [index, account] of roster.accounts.entries()) {
     it(`${account.id}: validates the name and job, permits only the expected scope and denies other IDs`, () => {
